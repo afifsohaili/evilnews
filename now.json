@@ -1,0 +1,8 @@
+{
+  "type": "docker",
+  "public": true,
+  "alias": "evilnews.now.sh",
+  "features": {
+    "cloud": "v2"
+  }
+}
