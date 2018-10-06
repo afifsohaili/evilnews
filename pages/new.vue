@@ -20,6 +20,11 @@ export default {
   components: {
     Item: () => import('~/components/item')
   },
+  head () {
+    return {
+      title: 'New Links | evilnews'
+    }
+  },
   data () {
     return {
       allLoaded: false,
@@ -28,7 +33,7 @@ export default {
     }
   },
   asyncData () {
-    return getInitialPosts('news')
+    return getInitialPosts('newest')
       .then(res => {
         return { posts: res }
       })
@@ -37,7 +42,7 @@ export default {
     loadMore () {
       this.currentPage += 1
       this.isLoading = true
-      return fetchPosts({ page: this.currentPage, type: 'news' })
+      return fetchPosts({ page: this.currentPage, type: 'newest' })
         .then(res => {
           if (res.length === 0) this.allLoaded = true
           const posts = this.posts

@@ -1,12 +1,12 @@
 import fetch from 'isomorphic-fetch'
 
-function getInitialPosts () {
-  return fetch('https://api.hnpwa.com/v0/news/1.json')
-    .then(res => res.json())
+function getInitialPosts (type) {
+  return fetchPosts({ page: 1, type: type })
 }
 
-function fetchPosts (page) {
-  return fetch(`https://api.hnpwa.com/v0/news/${page}.json`)
+function fetchPosts (opts) {
+  const { page, type } = opts
+  return fetch(`https://api.hnpwa.com/v0/${type}/${page}.json`)
     .then(res => res.json())
 }
 
