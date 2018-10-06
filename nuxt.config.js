@@ -1,5 +1,11 @@
 module.exports = {
   mode: 'universal',
+  modules: [
+    ['@nuxtjs/pwa']
+  ],
+  workbox: {
+    importScripts: ['evil-sw.js']
+  },
   head: {
     title: 'evilnews',
     meta: [
