@@ -1,9 +1,5 @@
 module.exports = {
   mode: 'universal',
-
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'evilnews',
     meta: [
@@ -15,7 +11,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  loading: { color: '#fff' },
+  loading: { color: '#666' },
   build: {
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
