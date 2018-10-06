@@ -1,11 +1,23 @@
 <template>
   <div class="l">
-    <nuxt-link
-      to="/"
-      class="logo"
-    >
-      <h2>evilnews</h2>
-    </nuxt-link>
+    <h2>
+      <nuxt-link
+        to="/"
+        class="logo"
+      >
+        evilnews
+      </nuxt-link>
+      <template v-if="this.$route.name !== 'item-id'">
+        // {{ this.$route.name === 'index' ? 'top' : this.$route.name }}
+      </template>
+    </h2>
+    <div class="m">
+      <nuxt-link to="/">top</nuxt-link>
+      <nuxt-link to="/new">new</nuxt-link>
+      <nuxt-link to="/show">show</nuxt-link>
+      <nuxt-link to="/ask">ask</nuxt-link>
+      <nuxt-link to="/jobs">jobs</nuxt-link>
+    </div>
     <br>
     <nuxt/>
     <br>
@@ -29,11 +41,23 @@ body {
   box-sizing: border-box;
 }
 
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+pre,
+code {
+  white-space: pre-wrap;
 }
 a {
   color: #666;
@@ -62,12 +86,36 @@ hr {
   max-width: 100%;
   margin: auto;
 }
+ul {
+  padding-left: 0;
+}
 .ll {
-  padding-bottom: 1.3rem;
+  padding: 0 5px;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.ll:hover {
+  border-radius: 3px;
+  background-color: #efefef;
 }
 .logo,
 .logo:visited {
   color: #333;
 }
 .tc { text-align: center }
+
+.m {
+  margin-top: 1rem;
+}
+.m .nuxt-link-exact-active {
+  background-color: #efefef;
+  color: #333;
+  border-radius: 3px;
+}
+.m a {
+  padding: 2px 10px;
+}
+p {
+  margin-bottom: 1.5rem;
+}
 </style>
