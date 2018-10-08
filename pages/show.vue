@@ -1,7 +1,8 @@
 <template>
   <div>
-    <Item :posts="posts" />
-    <br>
+    <Item
+      :posts="posts"
+      class="items"/>
     <button
       v-if="!allLoaded"
       :disabled="isLoading"

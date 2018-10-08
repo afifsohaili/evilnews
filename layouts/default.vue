@@ -30,4 +30,8 @@ body {
 .items {
   margin: 3em auto 2em;
 }
+
+a[href]:hover:not(.navbar-item) {
+  text-decoration: underline;
+}
 </style>

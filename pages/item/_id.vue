@@ -1,18 +1,18 @@
 <template>
   <div>
     <h2>{{ item.title }}</h2>
-    <p>by <a :href="`https://news.ycombinator.com/user?id=${item.user}`">
-      {{ item.user }}</a> • <span>{{ item.time_ago }}</span>
+    <p>by
+      <a :href="`https://news.ycombinator.com/user?id=${item.user}`">
+        {{ item.user }}
+      </a>
+      •
+      <span>{{ item.time_ago }}</span>
     </p>
     <div v-html="item.content" />
-    <br>
-    <hr>
-    <br>
     <div
       v-for="comment in item.comments"
       :key="comment.id"
-      class="ll"
-    >
+      class="ll">
       <div v-html="comment.content" />
       ~<a :href="`https://news.ycombinator.com/user?id=${comment.user}`">{{ comment.user }}</a>
     </div>

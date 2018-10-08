@@ -18,6 +18,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Freckle+Face' }
     ]
   },
+  css: [
+    '~/assets/bulma.scss'
+  ],
   loading: { color: '#666' },
   build: {
     extend (config, ctx) {
@@ -32,6 +35,6 @@ module.exports = {
     }
   },
   modules: [
-    'nuxt-buefy'
+    ['nuxt-buefy', { css: false }]
   ]
 }
