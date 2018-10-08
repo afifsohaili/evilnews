@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <h2>{{ item.title }}</h2>
-    <p>by
+  <div class="items">
+    <h2 class="title is-5">{{ item.title }}</h2>
+    <p class="meta">
+      by
       <a :href="`https://news.ycombinator.com/user?id=${item.user}`">
         {{ item.user }}
       </a>
       •
       <span>{{ item.time_ago }}</span>
     </p>
-    <div v-html="item.content" />
+    <article
+      class="content"
+      v-html="item.content" />
     <div
       v-for="comment in item.comments"
       :key="comment.id"
-      class="ll">
-      <div v-html="comment.content" />
+      class="comment">
+      <div
+        class="content"
+        v-html="comment.content" />
       ~<a :href="`https://news.ycombinator.com/user?id=${comment.user}`">{{ comment.user }}</a>
     </div>
     <p>
@@ -41,3 +46,26 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.title,
+.meta,
+article {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+article {
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 3rem;
+}
+
+.comment {
+  margin: 1rem auto;
+  padding: 1rem;
+
+  &:hover {
+    background: #fafafa;
+  }
+}
+</style>
