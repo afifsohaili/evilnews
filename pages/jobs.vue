@@ -5,8 +5,8 @@
     <button
       v-if="!allLoaded"
       :disabled="isLoading"
-      @click="loadMore"
-    >
+      class="button is-primary"
+      @click="loadMore">
       {{ isLoading ? 'loading...' : 'load more' }}
     </button>
     <p v-else>All data loaded</p>
@@ -18,7 +18,7 @@ import { getInitialPosts, fetchPosts } from '~/services/hn'
 
 export default {
   components: {
-    Item: () => import('~/components/item')
+    Item: () => import('~/components/Item')
   },
   head () {
     return {

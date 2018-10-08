@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'very minimal dump hackernews reader that you should not to use it, at least for now' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Freckle+Face' }
     ]
   },
   loading: { color: '#666' },
@@ -29,5 +30,8 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  modules: [
+    'nuxt-buefy'
+  ]
 }
