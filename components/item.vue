@@ -37,13 +37,13 @@ export default {
 <style scoped>
 .item {
   display: flex;
-  padding: 0.5em;
+  padding: 0.5rem;
   justify-content: space-between;
 }
 
 .index {
   display: inline-block;
-  margin-right: 1em;
+  margin-right: 1rem;
 }
 
 .comments {

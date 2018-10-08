@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 pre {
-  margin-top: 3em;
+  margin-top: 3rem;
 }
 </style>
 
@@ -28,7 +28,7 @@ body {
 }
 
 .items {
-  margin: 3em auto 2em;
+  margin: 3rem auto 2rem;
 }
 
 a[href]:hover:not(.navbar-item) {
