@@ -8,7 +8,9 @@
         <span class="index">[{{ index + 1 }}]</span>
         <a :href="post.url">
           {{ post.title }}
-        </a>&nbsp;by&nbsp;<a
+        </a>
+        &nbsp;by&nbsp;
+        <a
           :href="`https://news.ycombinator.com/user?id=${post.user}`"
           class="author">
           {{ post.user }}
@@ -17,7 +19,7 @@
       <nuxt-link
         :to="`/item/${post.id}/`"
         class="comments">
-        {{ post.comments_count }} comment{{ post.comments_count > 3 ? 's' : '' }}
+        {{ post.comments_count }}&nbsp;comment{{ post.comments_count > 3 ? 's' : '' }}
       </nuxt-link>
     </li>
   </ul>
@@ -34,11 +36,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .item {
   display: flex;
   padding: 0.5rem;
   justify-content: space-between;
+
+  &:hover {
+    background: #fafafa;
+  }
 }
 
 .index {
@@ -48,9 +54,6 @@ export default {
 
 .comments {
   text-align: right;
-}
-
-.item:hover {
-  background: #fafafa;
+  padding-left: 1rem;
 }
 </style>

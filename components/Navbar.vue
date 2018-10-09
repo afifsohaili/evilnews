@@ -11,11 +11,13 @@
       </nuxt-link>
 
       <a
+        :class="{ 'is-active': isMenuActive }"
         role="button"
         class="navbar-burger burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="navbarBasicExample">
+        data-target="navbarBasicExample"
+        @click="toggleMenu">
         <span aria-hidden="true" />
         <span aria-hidden="true" />
         <span aria-hidden="true" />
@@ -23,38 +25,59 @@
     </div>
 
     <div
+      :class="{ 'is-active': isMenuActive }"
       class="navbar-menu">
 
       <div class="navbar-end">
         <nuxt-link
           class="navbar-item navbar-item--right-menu"
-          to="/">
+          to="/"
+          @click="toggleMenu">
           Top
         </nuxt-link>
         <nuxt-link
           class="navbar-item navbar-item--right-menu"
-          to="/new">
+          to="/new"
+          @click="toggleMenu">
           New
         </nuxt-link>
         <nuxt-link
           class="navbar-item navbar-item--right-menu"
-          to="/show">
+          to="/show"
+          @click="toggleMenu">
           Show
         </nuxt-link>
         <nuxt-link
           class="navbar-item navbar-item--right-menu"
-          to="/ask">
+          to="/ask"
+          @click="toggleMenu">
           Ask
         </nuxt-link>
         <nuxt-link
           class="navbar-item navbar-item--right-menu"
-          to="/jobs">
+          to="/jobs"
+          @click="toggleMenu">
           Jobs
         </nuxt-link>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      isMenuActive: false
+    }
+  },
+  methods: {
+    toggleMenu () {
+      this.isMenuActive = !this.isMenuActive
+    }
+  }
+}
+</script>
 
 <style scoped>
 nav {
@@ -64,7 +87,8 @@ nav {
   border-bottom: 1px solid #e4e4e4;
 }
 
-.navbar-menu {
+.navbar-menu,
+.navbar-brand {
   align-items: center;
 }
 
